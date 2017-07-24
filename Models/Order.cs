@@ -21,7 +21,7 @@ namespace BangazonAPI.Models
     public int? PaymentTypeId { get; set;} // ? means that the variable can be null
     public PaymentType PaymentType { get; set; }
 
-    public ICollection<OrderProduct> OrderProducts;
+    public IEnumerable<OrderProduct> OrderProducts;
 
   }
 }
