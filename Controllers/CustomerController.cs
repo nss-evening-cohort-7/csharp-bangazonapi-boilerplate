@@ -26,7 +26,7 @@ namespace BangazonAPI.Models
         {
             get
             {
-                return new SqliteConnection(_config.GetConnectionString("DefaultConnection"));
+                return new SqlConnection(_config.GetConnectionString("DefaultConnection"));
             }
         }
 
@@ -55,7 +55,7 @@ namespace BangazonAPI.Models
             {
                 if (_include == "payments")
                 {
-                    Dictionary<int, Customer> studentExercises = new Dictionary<int, Customer>();
+                    Dictionary<int, Customer> customerPayments = new Dictionary<int, Customer>();
 
                     var customers = await conn.QueryAsync<Customer, PaymentType, Customer>(
                         sql,
