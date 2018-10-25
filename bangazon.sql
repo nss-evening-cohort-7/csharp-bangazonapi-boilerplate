@@ -1,6 +1,6 @@
 DELETE FROM OrderProduct;
-DELETE FROM EmployeeComputer;
-DELETE FROM EmployeeTrainingProgram;
+DELETE FROM ComputerEmployee;
+DELETE FROM EmployeeTraining;
 DELETE FROM Employee;
 DELETE FROM TrainingProgram;
 DELETE FROM Computer;
@@ -27,8 +27,8 @@ ALTER TABLE OrderProduct DROP CONSTRAINT [FK_OrderProduct_Order];
 
 
 DROP TABLE IF EXISTS OrderProduct;
-DROP TABLE IF EXISTS EmployeeComputer;
-DROP TABLE IF EXISTS EmployeeTrainingProgram;
+DROP TABLE IF EXISTS ComputerEmployee;
+DROP TABLE IF EXISTS EmployeeTraining;
 DROP TABLE IF EXISTS Employee;
 DROP TABLE IF EXISTS TrainingProgram;
 DROP TABLE IF EXISTS Computer;
