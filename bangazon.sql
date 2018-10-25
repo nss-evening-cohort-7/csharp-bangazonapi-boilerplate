@@ -12,11 +12,19 @@ DELETE FROM ProductType;
 DELETE FROM Customer;
 
 
-ALTER TABLE StudentExercise DROP CONSTRAINT [FK_Exercise];
-ALTER TABLE StudentExercise DROP CONSTRAINT [FK_Student];
-ALTER TABLE StudentExercise DROP CONSTRAINT [FK_Instructor];
-ALTER TABLE Student DROP CONSTRAINT [FK_StudentCohort];
-ALTER TABLE Instructor DROP CONSTRAINT [FK_Cohort];
+ALTER TABLE Employee DROP CONSTRAINT [FK_EmployeeDepartment];
+ALTER TABLE ComputerEmployee DROP CONSTRAINT [FK_ComputerEmployee_Employee];
+ALTER TABLE ComputerEmployee DROP CONSTRAINT [FK_ComputerEmployee_Computer];
+ALTER TABLE EmployeeTraining DROP CONSTRAINT [FK_EmployeeTraining_Employee];
+ALTER TABLE EmployeeTraining DROP CONSTRAINT [FK_EmployeeTraining_Training];
+ALTER TABLE Product DROP CONSTRAINT [FK_Product_ProductType];
+ALTER TABLE Product DROP CONSTRAINT [FK_Product_Customer];
+ALTER TABLE PaymentType DROP CONSTRAINT [FK_PaymentType_Customer];
+ALTER TABLE [Order] DROP CONSTRAINT [FK_Order_Customer];
+ALTER TABLE [Order] DROP CONSTRAINT [FK_Order_Payment];
+ALTER TABLE OrderProduct DROP CONSTRAINT [FK_OrderProduct_Product];
+ALTER TABLE OrderProduct DROP CONSTRAINT [FK_OrderProduct_Order];
+
 
 DROP TABLE IF EXISTS OrderProduct;
 DROP TABLE IF EXISTS EmployeeComputer;
@@ -124,5 +132,5 @@ CREATE TABLE OrderProduct (
 	OrderId INTEGER NOT NULL,
 	ProductId INTEGER NOT NULL,
     CONSTRAINT FK_OrderProduct_Product FOREIGN KEY(ProductId) REFERENCES Product(Id),
-    CONSTRAINT FK_OrderProduct_Order FOREIGN KEY(OrderId) REFERENCES Order(Id)
+    CONSTRAINT FK_OrderProduct_Order FOREIGN KEY(OrderId) REFERENCES [Order](Id)
 );
